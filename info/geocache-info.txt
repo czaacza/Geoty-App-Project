@@ -1,0 +1,5 @@
+geocatching characteristics:
+difficulty: 1 - 5
+size: S/M/L
+terrain:
+Description:

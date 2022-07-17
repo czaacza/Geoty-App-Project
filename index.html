@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="/pin.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""
+    ></script>
+
+    <script defer src="script.js"></script>
+
+    <title>geoty // Map your geocache</title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo-form-row">
+        <img src="geotyLogo.png" alt="Logo" class="logo logo-centered" />
+        <form class="form hidden">
+          <div class="form__row name__row">
+            <label class="form__label form__label--name">Name</label>
+            <input type="text" class="form__input form__input--name" />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Difficulty</label>
+            <select class="form__input form__input--difficulty">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label class="form__label form__label--right">Size</label>
+            <select class="form__input form__input--size">
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label class="form__label">Terrain</label>
+            <select class="form__input form__input--terrain">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label class="form__label form__label--right">Date</label>
+            <input
+              type="date"
+              class="form__input form__input--date"
+              placeholder="step/min"
+            />
+          </div>
+          <button class="form__btn">OK</button>
+        </form>
+      </div>
+      <ul class="geopoints geopoints-up">
+        <!-- <li class="geopoint geopoint--hard" data-id="1234567890">
+          <h2 class="geopoint__title">Śladami Milanówka #1</h2>
+          <button class="close-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fff"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-x"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+          <div class="geopoint__details">
+            <span class="geopoint__icon">⭐</span>
+            <span class="geopoint__value">5</span>
+            <span class="geopoint__unit">/5</span>
+          </div>
+          <div class="geopoint__details">
+            <span class="geopoint__icon">📏</span>
+            <span class="geopoint__value">M</span>
+            <span class="geopoint__unit"></span>
+          </div>
+          <div class="geopoint__details">
+            <span class="geopoint__icon">⛰️</span>
+            <span class="geopoint__value">4</span>
+            <span class="geopoint__unit">/5</span>
+          </div>
+          <div class="geopoint__details">
+            <span class="geopoint__icon">🗓️</span>
+            <span class="geopoint__value">07-16</span>
+            <span class="geopoint__unit"></span>
+          </div>
+        </li>
+        <li class="geopoint geopoint--easy" data-id="1234567891">
+          <h2 class="geopoint__title">Grota Podkowa Leśna</h2>
+          <div class="geopoint__details">
+            <span class="geopoint__icon">⭐</span>
+            <span class="geopoint__value">2</span>
+            <span class="geopoint__unit">/5</span>
+          </div>
+          <div class="geopoint__details">
+            <span class="geopoint__icon">📏</span>
+            <span class="geopoint__value">L</span>
+            <span class="geopoint__unit"></span>
+          </div>
+          <div class="geopoint__details">
+            <span class="geopoint__icon">⛰️</span>
+            <span class="geopoint__value">2</span>
+            <span class="geopoint__unit">/5</span>
+          </div>
+          <div class="geopoint__details">
+            <span class="geopoint__icon">🗓️</span>
+            <span class="geopoint__value">10.05</span>
+            <span class="geopoint__unit"></span>
+          </div>
+        </li> -->
+      </ul>
+
+      <p class="copyright">
+        &copy; Copyright by
+        <a
+          class="twitter-link"
+          target="_blank"
+          href="https://twitter.com/jonasschmedtman"
+          >Jonas Schmedtmann</a
+        >. Use for learning or your portfolio. Don't use to teach. Don't claim
+        as your own.
+      </p>
+    </div>
+    <div id="map"></div>
+  </body>
+</html>

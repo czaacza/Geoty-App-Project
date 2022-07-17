@@ -1,0 +1,13 @@
+user stories:
+1. As a user I want to select a geocache point on a map so I can see my found geocache.
+2. I want to save info about selected geocache point (difficulty, terrain, size, hint)
+3. I want to see all selected geocache points on a map so I can check their locations
+4. I want to see all selected geocache points on a glance to know the info about them
+
+Features:
+1. Map where user clicks to add new geocache point.
+2. Geolocation to display map at user's current location
+3. Form to input difficulty, terrain, size and hint
+4. Display all points in a list
+5. Display all points on a map
+6. Store geocache data in the browser using local storage API
