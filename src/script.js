@@ -123,7 +123,6 @@ class App {
     if (date === '') {
       alert('Please select the date before adding new Geocache Point');
     }
-
     // Create geopoint object
 
     const newGeopoint = new Geopoint(
@@ -178,7 +177,7 @@ class App {
     if (geopoint.name.length > 0) {
       popupContent = geopoint.name;
     }
-    L.marker(geopoint.coords)
+    const marker = L.marker(geopoint.coords)
       .addTo(this.#map)
       .bindPopup(
         L.popup({
@@ -263,7 +262,31 @@ class App {
     const closeButtonEl = e.target.closest('.close-button');
     if (closeButtonEl) {
       const choseGeopoint = e.target.closest('.geopoint');
+      let choseGeopointObject;
+      for (let geopoint of this.#geopoints) {
+        if (geopoint.id === choseGeopoint.dataset.id) {
+          choseGeopointObject = geopoint;
+          break;
+        }
+      }
+
       choseGeopoint.remove();
+      this.#geopoints.pop(choseGeopointObject);
+      this._setLocalStorage();
+
+      for (let [key, value] of Object.entries(this.#map._layers)) {
+        if (value._latlng) {
+          const { lat, lng } = value._latlng;
+          if (
+            lat === choseGeopointObject.coords[0] &&
+            lng === choseGeopointObject.coords[1]
+          ) {
+            if (this.#map._layers[key]) {
+              this.#map._layers[key].remove();
+            }
+          }
+        }
+      }
     }
   }
 
