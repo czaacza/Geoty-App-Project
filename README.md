@@ -9,5 +9,7 @@ It allows the user to add new geopoints on a map and asign them a name, difficul
 
 <img src="https://github.com/czaacza/Geoty-Website-Project/blob/master/img/geotyProject.PNG" width="844" height="400"/>
 
+The site was created as a part of Jonas Schmedtmann Javascript course. I modified the main subject of the page and I have written all the code by myself, but the "mapty" project introduced by Jonas was my inspiration.
+
 ## Check it out on your own!
 https://geoty.netlify.app/
