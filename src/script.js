@@ -3,6 +3,7 @@
 const ul = document.querySelector('.geopoints');
 const logo = document.querySelector('.logo');
 const form = document.querySelector('.form');
+const logoFormRow = document.querySelector('.logo-form-row');
 const inputName = document.querySelector('.form__input--name');
 const inputDifficulty = document.querySelector('.form__input--difficulty');
 const inputSize = document.querySelector('.form__input--size');
@@ -86,14 +87,18 @@ class App {
 
   _showForm() {
     form.classList.remove('hidden');
-    logo.classList.remove('logo-centered');
+    form.classList.add('form-active');
+
+    logoFormRow.classList.remove('logo-form-row-centered');
+    // logo.classList.remove('logo-centered');
     ul.classList.remove('geopoints-up');
     inputName.focus();
   }
 
   _hideForm() {
     form.classList.add('hidden');
-    logo.classList.add('logo-centered');
+    logoFormRow.classList.add('logo-form-row-centered');
+    // logo.classList.add('logo-centered');
     ul.classList.add('geopoints-up');
   }
 

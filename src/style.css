@@ -35,8 +35,6 @@ body {
   overscroll-behavior-y: none;
 
   background-color: #fff;
-  padding: 2.5rem 10rem;
-
   display: flex;
 }
 
@@ -63,17 +61,17 @@ a:visited {
   justify-content: space-between;
 }
 
+.logo-form-row-centered {
+  justify-content: center;
+}
+
 .logo {
   height: 6.4rem;
+  width: 16rem;
   transition: all 0.3s;
   align-self: center;
   margin-bottom: 4rem;
   cursor: pointer;
-}
-
-.logo-centered {
-  transition: all 0.3s;
-  transform: translateX(290px) scale(1.1);
 }
 
 .geopoints {
@@ -182,9 +180,13 @@ a:visited {
 
   /* Match height and activity boxes */
   height: 14rem;
-  transition: all 0.1s, transform 0.2s;
+  transition: all 0.1s, transform 0.4s;
 }
-
+/* .form-active {
+  transition: all 0.1s, transform 0.4s;
+  transition-delay: 2s;
+  opacity: 1;
+} */
 .form::before {
   position: absolute;
   top: 57.48px;
@@ -202,8 +204,7 @@ a:visited {
 }
 
 .form.hidden {
-  opacity: 0;
-  transform: translateX(30rem);
+  display: none;
 }
 
 .form__row {
@@ -303,4 +304,93 @@ a:visited {
 }
 .hard-popup .leaflet-popup-content-wrapper {
   border-left: 5px solid var(--color-brand--3);
+}
+@media (max-width: 1475px) {
+  .logo-form-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .geopoints {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    list-style: none;
+    height: 75vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transform: translateY(2rem);
+    transition: all 0.3s;
+  }
+  .geopoint {
+    max-height: 100px;
+  }
+  .logo {
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 1350px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .logo-form-row {
+    flex-direction: row;
+    align-items: center;
+  }
+  .sidebar {
+    height: 50%;
+    max-width: 100%;
+  }
+  #map {
+    width: 100%;
+  }
+  .geopoints {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 24px 18px;
+    list-style: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transform: translateY(2rem);
+    transition: all 0.3s;
+  }
+  .copyright {
+    display: none;
+  }
+  .logo-form-row {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 1070px) {
+  .form {
+    max-width: 400px;
+  }
+  .logo-form-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .geopoints {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 24px 18px;
+    list-style: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transform: translateY(2rem);
+    transition: all 0.3s;
+  }
+  .geopoint {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 620px) {
+  .geopoints {
+    max-height: 100%;
+  }
+  .geopoint {
+    max-height: 100%;
+  }
 }
