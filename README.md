@@ -1,4 +1,4 @@
-# Geoty-Website-Project
+# Geoty-App-Project
 Web application allowing Geocache players to map their finds.
 
 The website uses **localStorage API** and **Leaflet geolocation API**
