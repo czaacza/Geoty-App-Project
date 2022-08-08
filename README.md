@@ -12,4 +12,4 @@ It allows the user to add new geopoints on a map and asign them a name, difficul
 The site was created as a part of Jonas Schmedtmann Javascript course. I modified the main subject of the page and I have written all the code by myself, but the "mapty" project introduced by Jonas was my inspiration.
 
 ## Check it out on your own!
-https://geoty.netlify.app/
+### [geoty.netlify.app](https://geoty.netlify.app/)
